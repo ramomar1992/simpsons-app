@@ -10,26 +10,32 @@
 </head>
 
 <body>
-    <section class="left">
-        <% collection.forEach(elem=>{ %>
-        <% if(elem.characterdirection.includes('Left')) {%>
-        <a href="/favorite-quotes/<%= elem.id %> "><img src="<%= elem.image %> " alt=""></a>
-        <h2><%= elem.character %> </h2>
-        <p><%= elem.quote %> </p>
-        <% } %>
-        <% }) %>
-    </section>
-    <section class="right">
-        <% collection.forEach(elem=>{ %>
+    <header>
+        <%- include('./header') %>
+    </header>
+    <main>
 
-        <% if(elem.characterdirection.includes('Right')) {%>
-        <a href="/favorite-quotes/<%= elem.id %> "><img src="<%= elem.image %> " alt=""></a>
-        <h2><%= elem.character %> </h2>
-        <p><%= elem.quote %> </p>
-        <% } %>
-        <% }) %>
+        <section class="left">
+            <% collection.forEach(elem=>{ %>
+            <% if(elem.characterdirection.includes('Left')) {%>
+            <a href="/favorite-quotes/<%= elem.id %> "><img src="<%= elem.image %> " alt=""></a>
+            <h2><%= elem.character %> </h2>
+            <p><%= elem.quote %> </p>
+            <% } %>
+            <% }) %>
+        </section>
+        <section class="right">
+            <% collection.forEach(elem=>{ %>
 
-    </section>
+            <% if(elem.characterdirection.includes('Right')) {%>
+            <a href="/favorite-quotes/<%= elem.id %> "><img src="<%= elem.image %> " alt=""></a>
+            <h2><%= elem.character %> </h2>
+            <p><%= elem.quote %> </p>
+            <% } %>
+            <% }) %>
+
+        </section>
+    </main>
 </body>
 
 </html>
